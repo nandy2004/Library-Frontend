@@ -40,7 +40,7 @@ with st.expander("Welcome to Books Section",expanded=True):
                     else:
                         tabs=st.tabs(['Books'])
                         with tabs[0]:
-                            res = requests.get(f"{base_url}/books/{book_id}")
+                            res = requests.get(f"{base_url}/books/{int(book_id)}")
                             Books=res.json()
                             st.data_editor(Books,use_container_width=True)
         Get_book()
@@ -75,7 +75,7 @@ with st.expander("Welcome to Users Section",expanded=True):
                     else:
                         tabs=st.tabs(['Users'])
                         with tabs[0]:
-                            res = requests.get(f"{base_url}/users/{user_id}")
+                            res = requests.get(f"{base_url}/users/{int(user_id)}")
                             Users=res.json()
                             st.data_editor(Users,use_container_width=True)
         Get_user()
