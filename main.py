@@ -21,7 +21,7 @@ with st.expander("Welcome to Books Section",expanded=True):
         tabs=st.tabs(['Books'])
         with tabs[0]:
             res=requests.get(base_url + '/books')
-            Books=[res.json()]
+            Books=res.json()
             st.data_editor(Books)
 #------------GET METHOD -2
     
@@ -76,7 +76,7 @@ with st.expander("Welcome to Users Section",expanded=True):
                         tabs=st.tabs(['Users'])
                         with tabs[0]:
                             res = requests.get(f"{base_url}/users/{int(user_id)}")
-                            Users=[res.json()]
+                            Users=res.json()
                             st.data_editor(Users,use_container_width=True)
         Get_user()
 
